@@ -1,0 +1,5 @@
+0. login GitHub
+1. new repository
+2. clone with Visual Studio
+3. create Solution Blank
+4. change folder name "Solution Blank" to "src" folder
