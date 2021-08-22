@@ -2,7 +2,7 @@
 using MediatR;
 using System;
 
-namespace Catalog.Application.Features.Catalogs.Queries
+namespace Catalog.Application.Queries
 {
     public class GetProductQuery : IRequest<Result<ProductViewModel>>
     {

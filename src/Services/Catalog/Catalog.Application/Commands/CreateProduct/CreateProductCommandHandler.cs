@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Catalog.Application.Features.Catalogs.Commands
+namespace Catalog.Application.Commands
 {
     public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, Result<Unit>>
     {

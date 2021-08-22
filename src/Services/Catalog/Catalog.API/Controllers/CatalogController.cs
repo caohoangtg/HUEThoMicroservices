@@ -1,5 +1,5 @@
-﻿using Catalog.Application.Features.Catalogs.Commands;
-using Catalog.Application.Features.Catalogs.Queries;
+﻿using Catalog.Application.Commands;
+using Catalog.Application.Queries;
 using Catalog.Application.Utilities.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using System;

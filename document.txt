@@ -8,7 +8,7 @@
 
 0. Create Projects
 1. API (Web Core); Application, Domain, Infrastructure(library)
-2. Application depends Domain; Infrastructure depends Application; API depends Application, Infrastructure
+2. Application, Infrastructure depends Domain; Application depends Infrastructure; API depends Application;
 ======================
 
 IN to OUT

@@ -1,7 +1,7 @@
 ﻿using Catalog.Application.Utilities.DTOs;
 using MediatR;
 
-namespace Catalog.Application.Features.Catalogs.Commands
+namespace Catalog.Application.Commands
 {
     public class CreateProductCommand : IRequest<Result<Unit>>
     {

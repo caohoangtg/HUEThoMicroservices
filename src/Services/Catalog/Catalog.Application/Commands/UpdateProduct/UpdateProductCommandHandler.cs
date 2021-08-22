@@ -7,7 +7,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Catalog.Application.Features.Catalogs.Commands
+namespace Catalog.Application.Commands
 {
     public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand, Result<Unit>>
     {

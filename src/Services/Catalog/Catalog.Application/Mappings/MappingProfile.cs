@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Catalog.Application.Features.Catalogs.Commands;
-using Catalog.Application.Features.Catalogs.Queries;
+using Catalog.Application.Commands;
+using Catalog.Application.Queries;
 using Catalog.Domain.Entities;
 
 namespace Catalog.Application.Mappings

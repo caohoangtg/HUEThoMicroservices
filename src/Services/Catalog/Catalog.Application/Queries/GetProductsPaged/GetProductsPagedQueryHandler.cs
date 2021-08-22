@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Catalog.Application.Features.Catalogs.Queries
+namespace Catalog.Application.Queries
 {
     public class GetProductsPagedQueryHandler : IRequestHandler<GetProductsPagedQuery, Result<PagedList<ProductViewModel>>>
     {

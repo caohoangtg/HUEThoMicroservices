@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Catalog.Application.Features.Catalogs.Queries
+namespace Catalog.Application.Queries
 {
     public class ProductViewModel
     {

@@ -1,4 +1,4 @@
-﻿using Catalog.Application.Features.Catalogs.Queries;
+﻿using Catalog.Application.Queries;
 using System;
 using System.Collections.Generic;
 

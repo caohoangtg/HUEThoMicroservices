@@ -2,7 +2,7 @@
 using MediatR;
 using System.Collections.Generic;
 
-namespace Catalog.Application.Features.Catalogs.Queries
+namespace Catalog.Application.Queries
 {
     public class GetProductsPagedQuery : IRequest<Result<PagedList<ProductViewModel>>>
     {

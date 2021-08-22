@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Catalog.Application.Features.Catalogs.Queries
+namespace Catalog.Application.Queries
 {
     public class GetProductQueryHandler : IRequestHandler<GetProductQuery, Result<ProductViewModel>>
     {
