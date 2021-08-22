@@ -21,5 +21,10 @@ namespace Catalog.Infrastructure.Repositories
                 .Where(p => p.Category == category)
                 .ToListAsync();
         }
+
+        public IQueryable<Product> GetProductsAsQueryable()
+        {
+            return _dbContext.Products.AsQueryable();
+        }
     }
 }

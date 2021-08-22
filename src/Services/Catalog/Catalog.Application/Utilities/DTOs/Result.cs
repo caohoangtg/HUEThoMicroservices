@@ -1,8 +1,4 @@
-﻿using Catalog.Application.Queries;
-using System;
-using System.Collections.Generic;
-
-namespace Catalog.Application.Utilities.DTOs
+﻿namespace Catalog.Application.Utilities.DTOs
 {
     public class Result<T>
     {

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using Catalog.Application.Utilities.DTOs;
 using Catalog.Infrastructure.IRepositories.Persistence;
 using MediatR;
@@ -25,17 +26,13 @@ namespace Catalog.Application.Queries
         public async Task<Result<PagedList<ProductViewModel>>> Handle(GetProductsPagedQuery request, CancellationToken cancellationToken)
         {
             _logger.LogInformation("Get Products Paged");
-            var products = await _catalogRepository.GetAllAsync();
 
-            var productsList = _mapper.Map<IEnumerable<ProductViewModel>>(products);
-
-            //var productPaged = PagedList<ProductViewModel>
-            //        .CreateAsync(productsList, request.PagingParams.PageNumber, request.PagingParams.PageSize);
+            var query = _catalogRepository.GetProductsAsQueryable()
+                .ProjectTo<ProductViewModel>(_mapper.ConfigurationProvider);
 
             return Result<PagedList<ProductViewModel>>.Success(
-                PagedList<ProductViewModel>
-                    .CreateAsync(productsList, request.PagingParams.PageNumber, request.PagingParams.PageSize)
-            );
+                    await PagedList<ProductViewModel>.CreateAsync(query, request.PagingParams.PageNumber, request.PagingParams.PageSize)
+                );
         }
     }
 }
