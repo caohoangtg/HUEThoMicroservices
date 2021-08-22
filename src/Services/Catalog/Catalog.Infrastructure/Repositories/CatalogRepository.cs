@@ -1,5 +1,5 @@
-﻿using Catalog.Application.Contracts.Persistence;
-using Catalog.Domain.Entities;
+﻿using Catalog.Domain.Entities;
+using Catalog.Infrastructure.IRepositories.Persistence;
 using Catalog.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;

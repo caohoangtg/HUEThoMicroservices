@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
 
-namespace Catalog.Application.Contracts.Persistence
+namespace Catalog.Infrastructure.IRepositories.Persistence
 {
 	public interface IAsyncRepository<T> where T : EntityBase
 	{

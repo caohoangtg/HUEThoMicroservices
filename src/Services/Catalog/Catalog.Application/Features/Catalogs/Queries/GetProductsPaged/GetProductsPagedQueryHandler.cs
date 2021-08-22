@@ -1,22 +1,21 @@
 ﻿using AutoMapper;
-using Catalog.Application.Contracts.Persistence;
 using Catalog.Application.Utilities.DTOs;
+using Catalog.Infrastructure.IRepositories.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Catalog.Application.Features.Catalogs.Queries
 {
-    public class GetProductPagedQueryHandler : IRequestHandler<GetProductsPagedQuery, Result<PagedList<ProductViewModel>>>
+    public class GetProductsPagedQueryHandler : IRequestHandler<GetProductsPagedQuery, Result<PagedList<ProductViewModel>>>
     {
         private readonly ICatalogRepository _catalogRepository;
         private readonly IMapper _mapper;
-        private readonly ILogger<GetProductPagedQueryHandler> _logger;
+        private readonly ILogger<GetProductsPagedQueryHandler> _logger;
 
-        public GetProductPagedQueryHandler(ICatalogRepository catalogRepository, IMapper mapper, ILogger<GetProductPagedQueryHandler> logger)
+        public GetProductsPagedQueryHandler(ICatalogRepository catalogRepository, IMapper mapper, ILogger<GetProductsPagedQueryHandler> logger)
         {
             _catalogRepository = catalogRepository;
             _mapper = mapper;

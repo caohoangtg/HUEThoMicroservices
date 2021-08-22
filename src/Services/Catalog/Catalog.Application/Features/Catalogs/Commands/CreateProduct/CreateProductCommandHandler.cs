@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using Catalog.Application.Contracts.Persistence;
 using Catalog.Application.Utilities.DTOs;
 using Catalog.Domain.Entities;
+using Catalog.Infrastructure.IRepositories.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using System.Threading;

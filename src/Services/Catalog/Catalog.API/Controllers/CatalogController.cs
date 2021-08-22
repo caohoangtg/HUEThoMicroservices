@@ -29,7 +29,7 @@ namespace Catalog.API.Controllers
             return HandleResult(await Mediator.Send(new GetProductQuery(id)));
         }
 
-        [HttpGet("{category}", Name = "GetProductByCategory")]
+        [HttpGet("GetProductByCategory/{category}", Name = "GetProductByCategory")]
         [ProducesResponseType(typeof(IEnumerable<ProductViewModel>), (int)HttpStatusCode.OK)]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         public async Task<ActionResult> GetProductByCategory(string category)

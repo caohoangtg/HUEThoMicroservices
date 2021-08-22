@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using Catalog.Application.Contracts.Persistence;
 using Catalog.Application.Utilities.DTOs;
+using Catalog.Infrastructure.IRepositories.Persistence;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
