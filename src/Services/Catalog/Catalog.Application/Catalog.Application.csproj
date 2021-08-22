@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\Catalogs\DTOs\" />
+    <Folder Include="Features\Catalogs\Commands\DTOs\" />
   </ItemGroup>
 
   <ItemGroup>
