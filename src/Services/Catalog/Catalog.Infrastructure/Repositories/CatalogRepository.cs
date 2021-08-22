@@ -17,11 +17,6 @@ namespace Catalog.Infrastructure.Repositories
 
         public async Task<IEnumerable<Product>> GetProductsByCategory(string category)
         {
-            if (string.IsNullOrEmpty(category))
-            {
-                return await _dbContext.Products.ToListAsync();
-            }
-
             return await _dbContext.Products
                 .Where(p => p.Category == category)
                 .ToListAsync();
