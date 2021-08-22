@@ -3,3 +3,77 @@
 2. clone with Visual Studio
 3. create Solution Blank
 4. change folder name "Solution Blank" to "src" folder
+5. commit and push
+=====================
+
+0. Create Projects
+1. API (Web Core); Application, Domain, Infrastructure(library)
+2. Application depends Domain; Infrastructure depends Application; API depends Application, Infrastructure
+======================
+
+IN to OUT
+======================
+
+*. DOMAIN
+1. create Common folder
+2. add new EntityBase.cs
+3. create Entities folder
+4. create Product.cs
+
+*. INFRASTRUCTURE
+1. create Persistence folder
+2. create CatalogContext.cs (using Microsoft.EntityFrameworkCore;)
+3. "Ctrl+ ." => generate constructor CatalogContext(option) => DbSet<Product>
+4. create InfrastructureServiceRegistration.cs static
+	- IServiceCollection (using Microsoft.Extensions.DependencyInjection;)
+	- IConfiguration (using Microsoft.Extensions.Configuration;)"Abstractions"
+	- UseSqlServer (using Microsoft.EntityFrameworkCore;)
+
+	
+*. API
+1. appsettings.json add ConnectionStrings = "Server=localhost\SQLEXPRESS;Database=Db;User Id=sa;Password=123;Trusted_Connection=True;"
+2. Startup.cs add services.AddInfrastructureServices(Configuration);
+3. nuget: Microsoft.EntityFrameworkCore.Tools for API
+4. Startup project: API, Package Manager Console => Default project: Infrastructure
+5. Add-Migration Init
+6. Update-Database
+7. SeedData
+
+*. APPLICATION
+1. create Contracts/Persistence folder
+2. create IAsyncRepository.cs (RepositoryBase)
+3. create ICatalogRepository.cs
+
+*. INFRASTRUCTURE
+1. create Repositories folder
+2. create RepositoryBase.cs
+3. create CatalogRepository.cs
+
+*. INFRASTRUCTURE
+1. in InfrastructureServiceRegistration.cs add:
+	- services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
+    - services.AddScoped<IOrderRepository, OrderRepository>();
+
+*. APPLICATION
+1. Package
+	- MediatR.Extensions.Microsoft.DependencyInjection
+	- AutoMapper.Extensions.Microsoft.DependencyInjection
+	- FluentValidation.DependencyInjectionExtensions
+	
+2. create Mappings folder
+	- create MappingProfile.cs
+	
+3. create Features/Catalogs folder
+ * Commands folder
+	- 
+ 
+ * Queries folder
+	- create GetProductsList folder
+	- create ProductViewModel.cs
+	- create GetProductsListQuery.cs
+	- create GetProductsListQueryHandler.cs
+
+
+*.add API CONTROLLER
+1. create BaseApiController.cs
+2. create CatalogController.cs
