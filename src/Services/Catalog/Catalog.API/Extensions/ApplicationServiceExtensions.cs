@@ -1,4 +1,6 @@
-﻿using Catalog.Infrastructure.IRepositories.Persistence;
+﻿using Catalog.Application.Mappings;
+using Catalog.Application.Queries;
+using Catalog.Infrastructure.IRepositories.Persistence;
 using Catalog.Infrastructure.Persistence;
 using Catalog.Infrastructure.Repositories;
 using FluentValidation;
@@ -15,9 +17,13 @@ namespace Catalog.API.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
         {
             //Application Service Registration
-            services.AddAutoMapper(Assembly.GetExecutingAssembly());
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            //services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            //services.AddMediatR(Assembly.GetExecutingAssembly());
+
+            services.AddAutoMapper(typeof(MappingProfile).Assembly);
+            //services.AddValidatorsFromAssembly(typeof(GetProductQueryHandler).Assembly);
+            services.AddMediatR(typeof(GetProductQueryHandler).Assembly);
 
             //Infrastructure Service Registration
             services.AddDbContext<CatalogContext>(option =>
